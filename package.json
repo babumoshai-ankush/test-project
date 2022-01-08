@@ -8,13 +8,19 @@
     "dev": "tsc && nodemon ./dist/server.js",
     "prod": "tsc && nodemon ./dist/server.js"
   },
-  "author": "",
+  "author": "Ankush Chakraborty",
   "license": "ISC",
   "dependencies": {
-    "@types/express": "^4.17.4",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
+    "helmet": "^5.0.1",
+    "joi": "^17.5.0",
     "mongoose": "^5.9.7",
-    "nodemon": "^2.0.2"
+    "mysql2": "^2.3.3",
+    "underscore": "^1.13.2",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "eslint": "^8.6.0"
   }
 }
