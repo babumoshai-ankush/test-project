@@ -1,3 +1,5 @@
+import * as mysql from "mysql2";
+
 enum Environments {
   local_environment = "local",
   dev_environment = "dev",
@@ -14,20 +16,31 @@ class Environment {
 
   getPort(): Number {
     if (Environments.prod_environment || Environments.qa_environment) {
-      return parseInt(process.env.PORT); //8081; //8083;
+      return parseInt(<string>process.env.PORT, 10); //8081; //8083;
     }
     return 3000;
   }
 
-  getDBName(): String {
-    if (this.environment === Environments.prod_environment) {
-      return "db_test_project_prod";
-    } else if (this.environment === Environments.dev_environment) {
-      return "db_test_project_dev";
-    } else if (this.environment === Environments.qa_environment) {
-      return "db_test_project_qa";
-    } else {
-      return "db_test_project_local";
+  getDBConfig(): mysql.ConnectionOptions {
+    switch (this.environment) {
+      case Environments.dev_environment:
+        return {
+          host: "localhost",
+          user: "root",
+          database: "donor_db",
+        };
+      case Environments.prod_environment:
+        return {
+          host: "",
+          user: "",
+          database: "",
+        };
+      case Environments.qa_environment:
+        return {
+          host: "",
+          user: "",
+          database: "",
+        };
     }
   }
 }

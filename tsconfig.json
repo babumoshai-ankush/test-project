@@ -1,16 +1,26 @@
 {
-    "compilerOptions": {
-       "module": "commonjs",
-       "moduleResolution": "node",
-       "pretty": true,
-       "target": "es6",
-       "outDir": "./dist",
-       "baseUrl": "./lib"
-    },
-    "include": [
-       "lib/**/*.ts"
-    ],
-    "exclude": [
-       "node_modules"
-    ]
- }
+   "compilerOptions": {
+      "allowJs": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      // "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      // "isolatedModules": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "pretty": true,
+      "target": "es6",
+      "outDir": "./dist",
+      "baseUrl": "./lib"
+   },
+   "include": [
+      "lib/**/*.ts",
+      "src",
+      "decs.d.ts"
+   ],
+   "exclude": [
+      "node_modules"
+   ]
+}
